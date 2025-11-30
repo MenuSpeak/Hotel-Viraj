@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en"
 <head>
@@ -634,6 +633,37 @@
       font-size: 16px;
     }
 
+    /* Table Number Input */
+    .table-input-container {
+      margin: 15px 0;
+      padding: 12px 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.03);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+    }
+
+    .table-input-label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: var(--gold2);
+      font-size: 14px;
+    }
+
+    .table-input {
+      width: 100%;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 8px;
+      padding: 10px 12px;
+      color: white;
+      font-size: 14px;
+    }
+
+    .table-input:focus {
+      outline: none;
+      border-color: var(--gold1);
+    }
+
     /* Print Button */
     .print-container {
       display: flex;
@@ -911,6 +941,12 @@
         <div class="cart-empty" id="cartEmpty">Your cart is empty</div>
       </div>
       
+      <!-- Table Number Input -->
+      <div class="table-input-container">
+        <label class="table-input-label" for="tableNumber">Enter Table Number:</label>
+        <input type="text" class="table-input" id="tableNumber" placeholder="Table No." maxlength="10">
+      </div>
+      
       <div class="cart-total">
         <span>Total:</span>
         <span class="total-amount" id="cartTotal">₹0</span>
@@ -1067,6 +1103,7 @@
     const cartTotal = document.getElementById('cartTotal');
     const clearCart = document.getElementById('clearCart');
     const whatsappOrder = document.getElementById('whatsappOrder');
+    const tableNumberInput = document.getElementById('tableNumber');
 
     // Initialize the app
     function init() {
@@ -1320,14 +1357,21 @@
         return;
       }
       
+      const tableNumber = tableNumberInput.value.trim();
+      
       let message = 'Hello! I would like to place an order:\n\n';
       
       cart.forEach(item => {
         message += `${item.name} - ${item.quantity} x ${item.price}\n`;
       });
       
-      message += `\nTotal: ${cartTotal.textContent}\n\n`;
-      message += `Enter Table No:  `;
+      message += `\nTotal: ${cartTotal.textContent}\n`;
+      
+      if (tableNumber) {
+        message += `Table Number: ${tableNumber}\n`;
+      }
+      
+      message += `\nThank you!`;
       
       const phone = '919860962184'; // Replace with your WhatsApp number
       const encodedMessage = encodeURIComponent(message);
@@ -1340,40 +1384,4 @@
     document.addEventListener('DOMContentLoaded', init);
   </script>
 </body>
-</html> 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+</html>
