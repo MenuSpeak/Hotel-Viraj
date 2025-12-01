@@ -38,7 +38,7 @@
       color: #000;
       font-family: var(--ff-ui);
       -webkit-font-smoothing: antialiased;
-      padding: 32px;
+      padding: 20px;
       display: flex;
       justify-content: center;
     }
@@ -53,67 +53,102 @@
     }
 
     /* --------------------
-       Header with Logo
+       Top Banner Section
     -------------------- */
-    .hotel-header {
-      text-align: center;
-      margin-bottom: 30px;
+    .top-banner {
+      width: 100%;
+      margin-bottom: 25px;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+      position: relative;
+      height: 180px;
+    }
+
+    .banner-content {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .banner-logo {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .banner-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, rgba(212,175,55,0.3), rgba(255,204,102,0.2));
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 15px;
-    }
-
-    .logo-container {
-      display: flex;
-      align-items: center;
-      gap: 20px;
       justify-content: center;
-    }
-
-    .hotel-logo {
-      width: 80px;
-      height: 80px;
-      border-radius: 50%;
-      background: var(--accent);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 2rem;
-      font-weight: bold;
-      color: #000;
-      box-shadow: 0 8px 25px rgba(212,175,55,0.3);
-      border: 3px solid #fff;
-    }
-
-    .hotel-title {
+      padding: 20px;
       text-align: center;
     }
 
+    .hotel-name {
+      font-family: var(--ff-heading);
+      font-size: 3rem;
+      font-weight: 700;
+      color: white;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+      margin-bottom: 5px;
+    }
+
+    .hotel-tagline {
+      font-size: 1.2rem;
+      color: white;
+      font-weight: 500;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+      max-width: 600px;
+    }
+
+    /* --------------------
+       Hotel Info Section
+    -------------------- */
+    .hotel-info {
+      text-align: center;
+      margin-bottom: 25px;
+      padding: 20px;
+      background: linear-gradient(135deg, rgba(212,175,55,0.1), rgba(255,204,102,0.05));
+      border-radius: 16px;
+      border: 1px solid rgba(212,175,55,0.2);
+    }
+
+    .hotel-title {
+      margin-bottom: 10px;
+    }
+
     .hotel-title h2 {
-      font-size: 2.8rem;
+      font-size: 2.5rem;
       font-weight: 700;
       margin: 0;
       color: #000;
       font-family: var(--ff-heading);
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
     }
 
-    .hotel-title .subtitle {
-      text-align: center;
+    .hotel-subtitle {
       font-size: 1.2rem;
       color: #666;
-      margin-top: 8px;
+      margin-bottom: 8px;
       font-weight: 500;
     }
 
-    .tagline {
-      text-align: center;
+    .hotel-slogan {
       font-size: 1rem;
       color: var(--gold1);
       font-weight: 600;
-      margin-top: 5px;
       font-style: italic;
+      margin-top: 5px;
     }
 
     /* --------------------
@@ -563,11 +598,42 @@
     }
 
     /* --------------------
-       Responsive
+       Responsive Design
     -------------------- */
+    @media (max-width: 992px) {
+      .top-banner {
+        height: 160px;
+      }
+      
+      .hotel-name {
+        font-size: 2.5rem;
+      }
+      
+      .hotel-tagline {
+        font-size: 1.1rem;
+      }
+    }
+
     @media (max-width: 768px) {
       body {
-        padding: 16px;
+        padding: 15px;
+      }
+      
+      .top-banner {
+        height: 140px;
+        margin-bottom: 20px;
+      }
+      
+      .hotel-name {
+        font-size: 2.2rem;
+      }
+      
+      .hotel-tagline {
+        font-size: 1rem;
+      }
+      
+      .hotel-title h2 {
+        font-size: 2rem;
       }
       
       .menu-grid {
@@ -602,26 +668,94 @@
         width: 100%;
         height: 150px;
       }
+    }
+
+    @media (max-width: 576px) {
+      .top-banner {
+        height: 120px;
+      }
       
-      .logo-container {
-        flex-direction: column;
-        gap: 10px;
+      .hotel-name {
+        font-size: 1.8rem;
+      }
+      
+      .hotel-tagline {
+        font-size: 0.9rem;
+        padding: 0 10px;
       }
       
       .hotel-title h2 {
-        font-size: 2.2rem;
+        font-size: 1.6rem;
+      }
+      
+      .hotel-subtitle {
+        font-size: 1rem;
+      }
+      
+      .hotel-slogan {
+        font-size: 0.9rem;
+      }
+      
+      .tabs-container {
+        justify-content: flex-start;
+        overflow-x: auto;
+        padding-bottom: 10px;
+      }
+      
+      .tab {
+        flex-shrink: 0;
+      }
+      
+      .cart-content {
+        width: 95%;
+        padding: 20px;
       }
     }
 
     @media (max-width: 480px) {
-      .hotel-title h2 {
-        font-size: 1.8rem;
+      .top-banner {
+        height: 100px;
       }
       
-      .hotel-logo {
-        width: 60px;
-        height: 60px;
+      .hotel-name {
         font-size: 1.5rem;
+      }
+      
+      .hotel-tagline {
+        font-size: 0.8rem;
+      }
+      
+      .hotel-info {
+        padding: 15px;
+      }
+      
+      .cart-button {
+        width: 50px;
+        height: 50px;
+      }
+      
+      .cart-count {
+        width: 20px;
+        height: 20px;
+        font-size: 10px;
+      }
+    }
+
+    @media (max-width: 360px) {
+      body {
+        padding: 10px;
+      }
+      
+      .top-banner {
+        height: 90px;
+      }
+      
+      .hotel-name {
+        font-size: 1.3rem;
+      }
+      
+      .hotel-tagline {
+        font-size: 0.7rem;
       }
     }
   </style>
@@ -629,16 +763,25 @@
 <body>
   <div class="container">
     <main class="menu">
-      <!-- Hotel Header with Logo -->
-      <div class="hotel-header">
-        <div class="logo-container">
-          <div class="hotel-logo">"img":"logo.jpg"</div>
-          <div class="hotel-title">
-            <h2>हॉटेल Viraj</h2>
-            <div class="subtitle">• Vegetarian — Nonveg •</div>
-            <div class="tagline">"स्वाद का अनोखा अनुभव"</div>
+      <!-- Top Banner with Logo -->
+      <div class="top-banner">
+        <div class="banner-content">
+          <!-- Banner Logo Image -->
+          <img src="banner-logo.jpg" alt="Hotel Viraj Banner" class="banner-logo">
+          <div class="banner-overlay">
+            <div class="hotel-name">हॉटेल Viraj</div>
+            <div class="hotel-tagline">स्वाद का अनोखा अनुभव • Vegetarian — Nonveg</div>
           </div>
         </div>
+      </div>
+
+      <!-- Hotel Info Section -->
+      <div class="hotel-info">
+        <div class="hotel-title">
+          <h2>हॉटेल Viraj</h2>
+        </div>
+        <div class="hotel-subtitle">• Vegetarian — Nonveg •</div>
+        <div class="hotel-slogan">"स्वाद का अनोखा अनुभव"</div>
       </div>
 
       <div class="controls">
@@ -728,97 +871,96 @@
   </div>
 
   <script>
-    const data = [{"id":1,"cat":"Roti","name":"तंदूर रोटी / Tandoor Roti","price":"₹15","desc":"Tandoor Roti","tags":["Vegetarian"],"img":"img/tandoor_roti.jpeg"},
-{"id":2,"cat":"Roti","name":"बटर रोटी / Butter Roti","price":"₹20","desc":"Butter Roti","tags":["Vegetarian"],"img":"img/butter_roti.jpeg"},
-{"id":3,"cat":"Roti","name":"मसाला रोटी / Masala Roti","price":"₹20","desc":"Masala Roti","tags":["Vegetarian"],"img":"img/masala_roti.jpeg"},
-{"id":4,"cat":"Roti","name":"तंदूर पराठा / Tandoor Paratha","price":"₹20","desc":"Tandoor Paratha","tags":["Vegetarian"],"img":"img/tandoor_paratha.jpeg"},
-{"id":5,"cat":"Roti","name":"बाजरी भाकरी / Bajari Bhakri","price":"₹25","desc":"Bajari Bhakri","tags":["Vegetarian"],"img":"img/bajari_bhakri.jpeg"},
-{"id":6,"cat":"Roti","name":"ज्वारी भाकरी / Jwari Bhakri","price":"₹25","desc":"Jwari Bhakri","tags":["Vegetarian"],"img":"img/jwari_bhakri.jpeg"},
-{"id":7,"cat":"Roti","name":"व्हीट रोटी / Wheat Roti","price":"₹18","desc":"Wheat Roti","tags":["Vegetarian"],"img":"img/wheat_roti.jpeg"},
-{"id":8,"cat":"Roti","name":"चपाती / Chapati","price":"₹18","desc":"Chapati","tags":["Vegetarian"],"img":"img/chapati.jpeg"},
+    const data = [
+      {"id":1,"cat":"Roti","name":"तंदूर रोटी / Tandoor Roti","price":"₹15","desc":"Tandoor Roti","tags":["Vegetarian"],"img":"img/tandoor_roti.jpeg"},
+      {"id":2,"cat":"Roti","name":"बटर रोटी / Butter Roti","price":"₹20","desc":"Butter Roti","tags":["Vegetarian"],"img":"img/butter_roti.jpeg"},
+      {"id":3,"cat":"Roti","name":"मसाला रोटी / Masala Roti","price":"₹20","desc":"Masala Roti","tags":["Vegetarian"],"img":"img/masala_roti.jpeg"},
+      {"id":4,"cat":"Roti","name":"तंदूर पराठा / Tandoor Paratha","price":"₹20","desc":"Tandoor Paratha","tags":["Vegetarian"],"img":"img/tandoor_paratha.jpeg"},
+      {"id":5,"cat":"Roti","name":"बाजरी भाकरी / Bajari Bhakri","price":"₹25","desc":"Bajari Bhakri","tags":["Vegetarian"],"img":"img/bajari_bhakri.jpeg"},
+      {"id":6,"cat":"Roti","name":"ज्वारी भाकरी / Jwari Bhakri","price":"₹25","desc":"Jwari Bhakri","tags":["Vegetarian"],"img":"img/jwari_bhakri.jpeg"},
+      {"id":7,"cat":"Roti","name":"व्हीट रोटी / Wheat Roti","price":"₹18","desc":"Wheat Roti","tags":["Vegetarian"],"img":"img/wheat_roti.jpeg"},
+      {"id":8,"cat":"Roti","name":"चपाती / Chapati","price":"₹18","desc":"Chapati","tags":["Vegetarian"],"img":"img/chapati.jpeg"},
 
-{"id":9,"cat":"Rice","name":"जीरा राइस / Jeera Rice","price":"₹60 Half, ₹110 Full","desc":"Jeera Rice","tags":["Vegetarian"],"img":"img/jeera_rice.jpeg"},
-{"id":10,"cat":"Rice","name":"प्लेन राइस / Plain Rice","price":"₹40 Half, ₹90 Full","desc":"Plain Rice","tags":["Vegetarian"],"img":"img/plain_rice.jpeg"},
-{"id":11,"cat":"Rice","name":"वेग पुलाव / Veg Pulao","price":"₹100 Half, ₹180 Full","desc":"Veg Pulao","tags":["Vegetarian"],"img":"img/veg_pulao.jpeg"},
-{"id":12,"cat":"Rice","name":"मसाला राइस / Masala Rice","price":"₹80 Half, ₹140 Full","desc":"Masala Rice","tags":["Vegetarian"],"img":"img/masala_rice.jpeg"},
-{"id":13,"cat":"Rice","name":"स्टीम राइस / Steam Rice","price":"₹60 Half, ₹100 Full","desc":"Steam Rice","tags":["Vegetarian"],"img":"img/steam_rice.jpeg"},
+      {"id":9,"cat":"Rice","name":"जीरा राइस / Jeera Rice","price":"₹60 Half, ₹110 Full","desc":"Jeera Rice","tags":["Vegetarian"],"img":"img/jeera_rice.jpeg"},
+      {"id":10,"cat":"Rice","name":"प्लेन राइस / Plain Rice","price":"₹40 Half, ₹90 Full","desc":"Plain Rice","tags":["Vegetarian"],"img":"img/plain_rice.jpeg"},
+      {"id":11,"cat":"Rice","name":"वेग पुलाव / Veg Pulao","price":"₹100 Half, ₹180 Full","desc":"Veg Pulao","tags":["Vegetarian"],"img":"img/veg_pulao.jpeg"},
+      {"id":12,"cat":"Rice","name":"मसाला राइस / Masala Rice","price":"₹80 Half, ₹140 Full","desc":"Masala Rice","tags":["Vegetarian"],"img":"img/masala_rice.jpeg"},
+      {"id":13,"cat":"Rice","name":"स्टीम राइस / Steam Rice","price":"₹60 Half, ₹100 Full","desc":"Steam Rice","tags":["Vegetarian"],"img":"img/steam_rice.jpeg"},
 
-{"id":14,"cat":"Non Veg Handi","name":"मटण हंडी / Mutton Handi","price":"₹630 Half, ₹1150 Full","desc":"Mutton Handi","tags":["Non-Vegetarian"],"img":"img/mutton_handi.jpeg"},
-{"id":15,"cat":"Non Veg Handi","name":"चिकन हंडी / Chicken Handi","price":"₹390 Half, ₹800 Full","desc":"Chicken Handi","tags":["Non-Vegetarian"],"img":"img/chicken_handi.jpeg"},
-{"id":16,"cat":"Non Veg Handi","name":"मच्छी हंडी / Machhi Handi","price":"₹380 Half, ₹700 Full","desc":"Machhi Handi","tags":["Non-Vegetarian"],"img":"img/machhi_handi.jpeg"},
-{"id":17,"cat":"Non Veg Handi","name":"अंडा हंडी / Anda Handi","price":"₹350 Half, ₹600 Full","desc":"Anda Handi","tags":["Non-Vegetarian"],"img":"img/anda_handi.jpeg"},
+      {"id":14,"cat":"Non Veg Handi","name":"मटण हंडी / Mutton Handi","price":"₹630 Half, ₹1150 Full","desc":"Mutton Handi","tags":["Non-Vegetarian"],"img":"img/mutton_handi.jpeg"},
+      {"id":15,"cat":"Non Veg Handi","name":"चिकन हंडी / Chicken Handi","price":"₹390 Half, ₹800 Full","desc":"Chicken Handi","tags":["Non-Vegetarian"],"img":"img/chicken_handi.jpeg"},
+      {"id":16,"cat":"Non Veg Handi","name":"मच्छी हंडी / Machhi Handi","price":"₹380 Half, ₹700 Full","desc":"Machhi Handi","tags":["Non-Vegetarian"],"img":"img/machhi_handi.jpeg"},
+      {"id":17,"cat":"Non Veg Handi","name":"अंडा हंडी / Anda Handi","price":"₹350 Half, ₹600 Full","desc":"Anda Handi","tags":["Non-Vegetarian"],"img":"img/anda_handi.jpeg"},
 
-{"id":18,"cat":"Veg Handi","name":"शेवगा हंडी / Shevaga Handi","price":"₹280 Half, ₹490 Full","desc":"Shevaga Handi","tags":["Vegetarian"],"img":"img/shevaga_handi.jpeg"},
-{"id":19,"cat":"Veg Handi","name":"बैंगन हंडी / Baingan Handi","price":"₹260 Half, ₹450 Full","desc":"Baingan Handi","tags":["Vegetarian"],"img":"img/baingan_handi.jpeg"},
-{"id":20,"cat":"Veg Handi","name":"शेव हंडी / Shev Handi","price":"₹220 Half, ₹400 Full","desc":"Shev Handi","tags":["Vegetarian"],"img":"img/shev_handi.jpeg"},
-{"id":21,"cat":"Veg Handi","name":"मिक्स हंडी / Mix Handi","price":"₹330 Half, ₹600 Full","desc":"Mix Handi","tags":["Vegetarian"],"img":"img/mix_handi.jpeg"},
-{"id":22,"cat":"Veg Handi","name":"पनीर हंडी / Paneer Handi","price":"₹400 Half, ₹750 Full","desc":"Paneer Handi","tags":["Vegetarian"],"img":"img/paneer_handi.jpeg"},
-{"id":23,"cat":"Veg Handi","name":"काजू हंडी / Kaju Handi","price":"₹400 Half, ₹750 Full","desc":"Kaju Handi","tags":["Vegetarian"],"img":"img/kaju_handi.jpeg"},
+      {"id":18,"cat":"Veg Handi","name":"शेवगा हंडी / Shevaga Handi","price":"₹280 Half, ₹490 Full","desc":"Shevaga Handi","tags":["Vegetarian"],"img":"img/shevaga_handi.jpeg"},
+      {"id":19,"cat":"Veg Handi","name":"बैंगन हंडी / Baingan Handi","price":"₹260 Half, ₹450 Full","desc":"Baingan Handi","tags":["Vegetarian"],"img":"img/baingan_handi.jpeg"},
+      {"id":20,"cat":"Veg Handi","name":"शेव हंडी / Shev Handi","price":"₹220 Half, ₹400 Full","desc":"Shev Handi","tags":["Vegetarian"],"img":"img/shev_handi.jpeg"},
+      {"id":21,"cat":"Veg Handi","name":"मिक्स हंडी / Mix Handi","price":"₹330 Half, ₹600 Full","desc":"Mix Handi","tags":["Vegetarian"],"img":"img/mix_handi.jpeg"},
+      {"id":22,"cat":"Veg Handi","name":"पनीर हंडी / Paneer Handi","price":"₹400 Half, ₹750 Full","desc":"Paneer Handi","tags":["Vegetarian"],"img":"img/paneer_handi.jpeg"},
+      {"id":23,"cat":"Veg Handi","name":"काजू हंडी / Kaju Handi","price":"₹400 Half, ₹750 Full","desc":"Kaju Handi","tags":["Vegetarian"],"img":"img/kaju_handi.jpeg"},
 
-{"id":24,"cat":"Non Veg Thali","name":"मटण थाळी / Mutton Thali","price":"₹299","desc":"Mutton Thali","tags":["Non-Vegetarian"],"img":"img/mutton_thali.jpeg"},
-{"id":25,"cat":"Non Veg Thali","name":"चिकन थाळी / Chicken Thali","price":"₹240","desc":"Chicken Thali","tags":["Non-Vegetarian"],"img":"img/chicken_thali.jpeg"},
-{"id":26,"cat":"Non Veg Thali","name":"मच्छी थाळी / Machhi Thali","price":"₹240","desc":"Machhi Thali","tags":["Non-Vegetarian"],"img":"img/machhi_thali.jpeg"},
-{"id":27,"cat":"Non Veg Thali","name":"अंडा थाळी / Anda Thali","price":"₹220","desc":"Anda Thali","tags":["Non-Vegetarian"],"img":"img/anda_thali.jpeg"},
+      {"id":24,"cat":"Non Veg Thali","name":"मटण थाळी / Mutton Thali","price":"₹299","desc":"Mutton Thali","tags":["Non-Vegetarian"],"img":"img/mutton_thali.jpeg"},
+      {"id":25,"cat":"Non Veg Thali","name":"चिकन थाळी / Chicken Thali","price":"₹240","desc":"Chicken Thali","tags":["Non-Vegetarian"],"img":"img/chicken_thali.jpeg"},
+      {"id":26,"cat":"Non Veg Thali","name":"मच्छी थाळी / Machhi Thali","price":"₹240","desc":"Machhi Thali","tags":["Non-Vegetarian"],"img":"img/machhi_thali.jpeg"},
+      {"id":27,"cat":"Non Veg Thali","name":"अंडा थाळी / Anda Thali","price":"₹220","desc":"Anda Thali","tags":["Non-Vegetarian"],"img":"img/anda_thali.jpeg"},
 
+      {"id":28,"cat":"Non Veg Dish","name":"चिकन मसाला / Chicken Masala","price":"₹160","desc":"Chicken Masala","tags":["Non-Vegetarian"],"img":"img/chicken_masala.jpeg"},
+      {"id":29,"cat":"Non Veg Dish","name":"मटन मसाला / Mutton Masala","price":"₹240","desc":"Mutton Masala","tags":["Non-Vegetarian"],"img":"img/mutton_masala.jpeg"},
+      {"id":30,"cat":"Non Veg Dish","name":"अंडा करी / Egg Curry","price":"₹120","desc":"Egg Curry","tags":["Non-Vegetarian"],"img":"img/egg_curry.jpeg"},
+      {"id":31,"cat":"Non Veg Dish","name":"मच्छी मसाला / Fish Masala","price":"₹170","desc":"Fish Masala","tags":["Non-Vegetarian"],"img":"img/fish_masala.jpeg"},
+      {"id":32,"cat":"Non Veg Dish","name":"अंडा मसाला / Egg Masala","price":"₹150","desc":"Egg Masala","tags":["Non-Vegetarian"],"img":"img/egg_masala.jpeg"},
+      {"id":33,"cat":"Non Veg Dish","name":"मटर पालक / Mutter Palak","price":"₹240","desc":"Mutter Palak","tags":["Non-Vegetarian"],"img":"img/mutter_palak.jpeg"},
+      {"id":34,"cat":"Non Veg Dish","name":"चिकन पालक / Chicken Palak","price":"₹170","desc":"Chicken Palak","tags":["Non-Vegetarian"],"img":"img/chicken_palak.jpeg"},
 
-{"id":28,"cat":"Non Veg Dish","name":"चिकन मसाला / Chicken Masala","price":"₹160","desc":"Chicken Masala","tags":["Non-Vegetarian"],"img":"img/chicken_masala.jpeg"},
-{"id":29,"cat":"Non Veg Dish","name":"मटन मसाला / Mutton Masala","price":"₹240","desc":"Mutton Masala","tags":["Non-Vegetarian"],"img":"img/mutton_masala.jpeg"},
-{"id":30,"cat":"Non Veg Dish","name":"अंडा करी / Egg Curry","price":"₹120","desc":"Egg Curry","tags":["Non-Vegetarian"],"img":"img/egg_curry.jpeg"},
-{"id":31,"cat":"Non Veg Dish","name":"मच्छी मसाला / Fish Masala","price":"₹170","desc":"Fish Masala","tags":["Non-Vegetarian"],"img":"img/fish_masala.jpeg"},
-{"id":32,"cat":"Non Veg Dish","name":"अंडा मसाला / Egg Masala","price":"₹150","desc":"Egg Masala","tags":["Non-Vegetarian"],"img":"img/egg_masala.jpeg"},
-{"id":33,"cat":"Non Veg Dish","name":"मटर पालक / Mutter Palak","price":"₹240","desc":"Mutter Palak","tags":["Non-Vegetarian"],"img":"img/mutter_palak.jpeg"},
-{"id":34,"cat":"Non Veg Dish","name":"चिकन पालक / Chicken Palak","price":"₹170","desc":"Chicken Palak","tags":["Non-Vegetarian"],"img":"img/chicken_palak.jpeg"},
+      {"id":35,"cat":"Non Veg Snacks","name":"फ्राय चिकन मसाला / Fry Chicken Masala","price":"₹160","desc":"Fry Chicken Masala","tags":["Non-Vegetarian"],"img":"img/fry_chicken_masala.jpeg"},
+      {"id":36,"cat":"Non Veg Snacks","name":"मटन फ्राय / Mutton Fry","price":"₹220","desc":"Mutton Fry","tags":["Non-Vegetarian"],"img":"img/mutton_fry.jpeg"},
+      {"id":37,"cat":"Non Veg Snacks","name":"बॉईल अंडा फ्राय / Boiled Egg Fry","price":"₹50","desc":"Boiled Egg Fry","tags":["Non-Vegetarian"],"img":"img/boiled_egg_fry.jpeg"},
+      {"id":38,"cat":"Non Veg Snacks","name":"मच्छी फ्राय / Fish Fry","price":"₹160","desc":"Fish Fry","tags":["Non-Vegetarian"],"img":"img/fish_fry.jpeg"},
+      {"id":39,"cat":"Non Veg Snacks","name":"मच्छी कंटकी / Fish Kantaki","price":"₹180","desc":"Fish Kantaki","tags":["Non-Vegetarian"],"img":"img/fish_kantaki.jpeg"},
+      {"id":40,"cat":"Non Veg Snacks","name":"चिकन कंटकी / Chicken Kantaki","price":"₹170","desc":"Chicken Kantaki","tags":["Non-Vegetarian"],"img":"img/chicken_kantaki.jpeg"},
+      {"id":41,"cat":"Non Veg Snacks","name":"अंडा आमलेट / Egg Omelette","price":"₹60","desc":"Egg Omelette","tags":["Non-Vegetarian"],"img":"img/egg_omelette.jpeg"},
+      {"id":42,"cat":"Non Veg Snacks","name":"अंडा भुर्जी / Egg Bhurji","price":"₹70","desc":"Egg Bhurji","tags":["Non-Vegetarian"],"img":"img/egg_bhurji.jpeg"},
+      {"id":43,"cat":"Non Veg Snacks","name":"अंडा हाफ फ्राय / Egg Half Fry","price":"₹60","desc":"Egg Half Fry","tags":["Non-Vegetarian"],"img":"img/egg_half_fry.jpeg"},
 
-{"id":35,"cat":"Non Veg Snacks","name":"फ्राय चिकन मसाला / Fry Chicken Masala","price":"₹160","desc":"Fry Chicken Masala","tags":["Non-Vegetarian"],"img":"img/fry_chicken_masala.jpeg"},
-{"id":36,"cat":"Non Veg Snacks","name":"मटन फ्राय / Mutton Fry","price":"₹220","desc":"Mutton Fry","tags":["Non-Vegetarian"],"img":"img/mutton_fry.jpeg"},
-{"id":37,"cat":"Non Veg Snacks","name":"बॉईल अंडा फ्राय / Boiled Egg Fry","price":"₹50","desc":"Boiled Egg Fry","tags":["Non-Vegetarian"],"img":"img/boiled_egg_fry.jpeg"},
-{"id":38,"cat":"Non Veg Snacks","name":"मच्छी फ्राय / Fish Fry","price":"₹160","desc":"Fish Fry","tags":["Non-Vegetarian"],"img":"img/fish_fry.jpeg"},
-{"id":39,"cat":"Non Veg Snacks","name":"मच्छी कंटकी / Fish Kantaki","price":"₹180","desc":"Fish Kantaki","tags":["Non-Vegetarian"],"img":"img/fish_kantaki.jpeg"},
-{"id":40,"cat":"Non Veg Snacks","name":"चिकन कंटकी / Chicken Kantaki","price":"₹170","desc":"Chicken Kantaki","tags":["Non-Vegetarian"],"img":"img/chicken_kantaki.jpeg"},
-{"id":41,"cat":"Non Veg Snacks","name":"अंडा आमलेट / Egg Omelette","price":"₹60","desc":"Egg Omelette","tags":["Non-Vegetarian"],"img":"img/egg_omelette.jpeg"},
-{"id":42,"cat":"Non Veg Snacks","name":"अंडा भुर्जी / Egg Bhurji","price":"₹70","desc":"Egg Bhurji","tags":["Non-Vegetarian"],"img":"img/egg_bhurji.jpeg"},
-{"id":43,"cat":"Non Veg Snacks","name":"अंडा हाफ फ्राय / Egg Half Fry","price":"₹60","desc":"Egg Half Fry","tags":["Non-Vegetarian"],"img":"img/egg_half_fry.jpeg"},
-
-{"id":44,"cat":"Non Veg Rice","name":"चिकन बिर्याणी / Chicken Biryani","price":"₹180","desc":"Chicken Biryani","tags":["Non-Vegetarian"],"img":"img/chicken_biryani.jpeg"},
-{"id":45,"cat":"Non Veg Rice","name":"मटन बिर्याणी / Mutton Biryani","price":"₹260","desc":"Mutton Biryani","tags":["Non-Vegetarian"],"img":"img/mutton_biryani.jpeg"},
-{"id":113,"cat":"Non Veg Rice","name":"वेज बिर्याणी / Veg Biryani","price":"₹160","desc":"Veg Biryani","tags":["Vegetarian"],"img":"img/veg_biryani.jpeg"},
+      {"id":44,"cat":"Non Veg Rice","name":"चिकन बिर्याणी / Chicken Biryani","price":"₹180","desc":"Chicken Biryani","tags":["Non-Vegetarian"],"img":"img/chicken_biryani.jpeg"},
+      {"id":45,"cat":"Non Veg Rice","name":"मटन बिर्याणी / Mutton Biryani","price":"₹260","desc":"Mutton Biryani","tags":["Non-Vegetarian"],"img":"img/mutton_biryani.jpeg"},
+      {"id":113,"cat":"Non Veg Rice","name":"वेज बिर्याणी / Veg Biryani","price":"₹160","desc":"Veg Biryani","tags":["Vegetarian"],"img":"img/veg_biryani.jpeg"},
       
-{"id":46,"cat":"Veg Snacks","name":"शेवगा फ्राय / Shevga Fry","price":"₹150","desc":"Shevga Fry","tags":["Vegetarian"],"img":"img/shevga_fry.jpeg"},
-{"id":47,"cat":"Veg Snacks","name":"चना फ्राय / Chana Fry","price":"₹80","desc":"Chana Fry","tags":["Vegetarian"],"img":"img/chana_fry.jpeg"},
-{"id":48,"cat":"Veg Snacks","name":"चना गार्लिक / Chana Garlic","price":"₹100","desc":"Chana Garlic","tags":["Vegetarian"],"img":"img/chana_garlic.jpeg"},
-{"id":49,"cat":"Veg Snacks","name":"चना रोश / Chana Rosh","price":"₹80","desc":"Chana Rosh","tags":["Vegetarian"],"img":"img/chana_rosh.jpeg"},
-{"id":50,"cat":"Veg Snacks","name":"ग्रीन पीस फ्राय / Green Peas Fry","price":"₹80","desc":"Green Peas Fry","tags":["Vegetarian"],"img":"img/green_peas_fry.jpeg"},
-{"id":51,"cat":"Veg Snacks","name":"कांदा पकोडा / Kanda Pakoda","price":"₹100","desc":"Kanda Pakoda","tags":["Vegetarian"],"img":"img/kanda_pakoda.jpeg"},
-{"id":52,"cat":"Veg Snacks","name":"फिंगर चिप्स / Finger Chips","price":"₹90","desc":"Finger Chips","tags":["Vegetarian"],"img":"img/finger_chips.jpeg"},
-{"id":53,"cat":"Veg Snacks","name":"मटकी पकोडा / Matki Pakoda","price":"₹120","desc":"Matki Pakoda","tags":["Vegetarian"],"img":"img/matki_pakoda.jpeg"},
-{"id":54,"cat":"Veg Snacks","name":"पापड फ्राय / Papad Fry","price":"₹25","desc":"Papad Fry","tags":["Vegetarian"],"img":"img/papad_fry.jpeg"},
-{"id":55,"cat":"Veg Snacks","name":"पापड मसाला / Papad Masala","price":"₹35","desc":"Papad Masala","tags":["Vegetarian"],"img":"img/papad_masala.jpeg"},
-{"id":56,"cat":"Veg Snacks","name":"रोस्ट पापड / Roast Papad","price":"₹20","desc":"Roast Papad","tags":["Vegetarian"],"img":"img/roast_papad.jpeg"},
-{"id":57,"cat":"Veg Snacks","name":"सोयाबीन कंटकी / Soyabean Kantaki","price":"₹110","desc":"Soyabean Kantaki","tags":["Vegetarian"],"img":"img/soyabean_kantaki.jpeg"},
-{"id":114,"cat":"Veg Snacks","name":"सोयाबीन फ्राय / Soyabein Fry","price":"₹110","desc":"Soyabein Fry","tags":["Vegetarian"],"img":"img/soyabein_fry.jpeg"},
+      {"id":46,"cat":"Veg Snacks","name":"शेवगा फ्राय / Shevga Fry","price":"₹150","desc":"Shevga Fry","tags":["Vegetarian"],"img":"img/shevga_fry.jpeg"},
+      {"id":47,"cat":"Veg Snacks","name":"चना फ्राय / Chana Fry","price":"₹80","desc":"Chana Fry","tags":["Vegetarian"],"img":"img/chana_fry.jpeg"},
+      {"id":48,"cat":"Veg Snacks","name":"चना गार्लिक / Chana Garlic","price":"₹100","desc":"Chana Garlic","tags":["Vegetarian"],"img":"img/chana_garlic.jpeg"},
+      {"id":49,"cat":"Veg Snacks","name":"चना रोश / Chana Rosh","price":"₹80","desc":"Chana Rosh","tags":["Vegetarian"],"img":"img/chana_rosh.jpeg"},
+      {"id":50,"cat":"Veg Snacks","name":"ग्रीन पीस फ्राय / Green Peas Fry","price":"₹80","desc":"Green Peas Fry","tags":["Vegetarian"],"img":"img/green_peas_fry.jpeg"},
+      {"id":51,"cat":"Veg Snacks","name":"कांदा पकोडा / Kanda Pakoda","price":"₹100","desc":"Kanda Pakoda","tags":["Vegetarian"],"img":"img/kanda_pakoda.jpeg"},
+      {"id":52,"cat":"Veg Snacks","name":"फिंगर चिप्स / Finger Chips","price":"₹90","desc":"Finger Chips","tags":["Vegetarian"],"img":"img/finger_chips.jpeg"},
+      {"id":53,"cat":"Veg Snacks","name":"मटकी पकोडा / Matki Pakoda","price":"₹120","desc":"Matki Pakoda","tags":["Vegetarian"],"img":"img/matki_pakoda.jpeg"},
+      {"id":54,"cat":"Veg Snacks","name":"पापड फ्राय / Papad Fry","price":"₹25","desc":"Papad Fry","tags":["Vegetarian"],"img":"img/papad_fry.jpeg"},
+      {"id":55,"cat":"Veg Snacks","name":"पापड मसाला / Papad Masala","price":"₹35","desc":"Papad Masala","tags":["Vegetarian"],"img":"img/papad_masala.jpeg"},
+      {"id":56,"cat":"Veg Snacks","name":"रोस्ट पापड / Roast Papad","price":"₹20","desc":"Roast Papad","tags":["Vegetarian"],"img":"img/roast_papad.jpeg"},
+      {"id":57,"cat":"Veg Snacks","name":"सोयाबीन कंटकी / Soyabean Kantaki","price":"₹110","desc":"Soyabean Kantaki","tags":["Vegetarian"],"img":"img/soyabean_kantaki.jpeg"},
+      {"id":114,"cat":"Veg Snacks","name":"सोयाबीन फ्राय / Soyabein Fry","price":"₹110","desc":"Soyabein Fry","tags":["Vegetarian"],"img":"img/soyabein_fry.jpeg"},
 
-
-{"id":90,"cat":"Veg Dish","name":"दाल फ्राय / Dal Fry","price":"₹100","desc":"Dal Fry","tags":["Vegetarian"],"img":"img/dal_fry.jpeg"},
-{"id":91,"cat":"Veg Dish","name":"दाल तडका / Dal Tadka","price":"₹120","desc":"Dal Tadka","tags":["Vegetarian"],"img":"img/dal_tadka.jpeg"},
-{"id":92,"cat":"Veg Dish","name":"बैंगन मसाला / Baingan Masala","price":"₹120","desc":"Baingan Masala","tags":["Vegetarian"],"img":"img/baingan_masala.jpeg"},
-{"id":93,"cat":"Veg Dish","name":"गोभी मसाला / Gobhi Masala","price":"₹120","desc":"Gobhi Masala","tags":["Vegetarian"],"img":"img/gobhi_masala.jpeg"},
-{"id":94,"cat":"Veg Dish","name":"शेवगा मसाला / Shevga Masala","price":"₹140","desc":"Shevga Masala","tags":["Vegetarian"],"img":"img/shevga_masala.jpeg"},
-{"id":95,"cat":"Veg Dish","name":"शेवगा फ्राय / Shevga Fry","price":"₹150","desc":"Shevga Fry","tags":["Vegetarian"],"img":"img/shevga_fry.jpeg"},
-{"id":96,"cat":"Veg Dish","name":"पनीर मसाला / Paneer Masala","price":"₹180","desc":"Paneer Masala","tags":["Vegetarian"],"img":"img/paneer_masala.jpeg"},
-{"id":97,"cat":"Veg Dish","name":"पनीर टिक्का / Paneer Tikka","price":"₹230","desc":"Paneer Tikka","tags":["Vegetarian"],"img":"img/paneer_tikka.jpeg"},
-{"id":98,"cat":"Veg Dish","name":"मेथी मसाला / Methi Masala","price":"₹130","desc":"Methi Masala","tags":["Vegetarian"],"img":"img/methi_masala.jpeg"},
-{"id":99,"cat":"Veg Dish","name":"लसूण मेथी / Lasun Methi","price":"₹100","desc":"Lasun Methi","tags":["Vegetarian"],"img":"img/lasun_methi.jpeg"},
-{"id":100,"cat":"Veg Dish","name":"शेवभाजी / Shevbhaji","price":"₹100","desc":"Shevbhaji","tags":["Vegetarian"],"img":"img/shevbhaji.jpeg"},
-{"id":101,"cat":"Veg Dish","name":"काजू करी / Kaju Curry","price":"₹180","desc":"Kaju Curry","tags":["Vegetarian"],"img":"img/kaju_curry.jpeg"},
-{"id":102,"cat":"Veg Dish","name":"सोयाबीन मसाला / Soyabean Masala","price":"₹110","desc":"Soyabean Masala","tags":["Vegetarian"],"img":"img/soyabean_masala.jpeg"},
-{"id":103,"cat":"Veg Dish","name":"चना मसाला / Chana Masala","price":"₹110","desc":"Chana Masala","tags":["Vegetarian"],"img":"img/chana_masala.jpeg"},
-{"id":104,"cat":"Veg Dish","name":"मटकी मसाला / Matki Masala","price":"₹100","desc":"Matki Masala","tags":["Vegetarian"],"img":"img/matki_masala.jpeg"},
-{"id":105,"cat":"Veg Dish","name":"मिक्स व्हेज / Mix Veg","price":"₹160","desc":"Mix Veg","tags":["Vegetarian"],"img":"img/mix_veg.jpeg"},
-{"id":106,"cat":"Veg Dish","name":"पालक पनीर / Palak Paneer","price":"₹190","desc":"Palak Paneer","tags":["Vegetarian"],"img":"img/palak_paneer.jpeg"},
-{"id":107,"cat":"Veg Dish","name":"प्लेन पालक / Plain Palak","price":"₹130","desc":"Plain Palak","tags":["Vegetarian"],"img":"img/plain_palak.jpeg"},
-{"id":108,"cat":"Veg Dish","name":"व्हेज मंचुरियन / Veg Manchurian","price":"₹180","desc":"Veg Manchurian","tags":["Vegetarian"],"img":"img/veg_manchurian.jpeg"},
-{"id":109,"cat":"Veg Dish","name":"आलू मीटर / Aloo Mutter","price":"₹150","desc":"Aloo Mutter","tags":["Vegetarian"],"img":"img/aloo_mutter.jpeg"},
-{"id":110,"cat":"Veg Dish","name":"मशरूम मसाला / Mushroom Masala","price":"₹200","desc":"Mushroom Masala","tags":["Vegetarian"],"img":"img/mushroom_masala.jpeg"},
+      {"id":90,"cat":"Veg Dish","name":"दाल फ्राय / Dal Fry","price":"₹100","desc":"Dal Fry","tags":["Vegetarian"],"img":"img/dal_fry.jpeg"},
+      {"id":91,"cat":"Veg Dish","name":"दाल तडका / Dal Tadka","price":"₹120","desc":"Dal Tadka","tags":["Vegetarian"],"img":"img/dal_tadka.jpeg"},
+      {"id":92,"cat":"Veg Dish","name":"बैंगन मसाला / Baingan Masala","price":"₹120","desc":"Baingan Masala","tags":["Vegetarian"],"img":"img/baingan_masala.jpeg"},
+      {"id":93,"cat":"Veg Dish","name":"गोभी मसाला / Gobhi Masala","price":"₹120","desc":"Gobhi Masala","tags":["Vegetarian"],"img":"img/gobhi_masala.jpeg"},
+      {"id":94,"cat":"Veg Dish","name":"शेवगा मसाला / Shevga Masala","price":"₹140","desc":"Shevga Masala","tags":["Vegetarian"],"img":"img/shevga_masala.jpeg"},
+      {"id":95,"cat":"Veg Dish","name":"शेवगा फ्राय / Shevga Fry","price":"₹150","desc":"Shevga Fry","tags":["Vegetarian"],"img":"img/shevga_fry.jpeg"},
+      {"id":96,"cat":"Veg Dish","name":"पनीर मसाला / Paneer Masala","price":"₹180","desc":"Paneer Masala","tags":["Vegetarian"],"img":"img/paneer_masala.jpeg"},
+      {"id":97,"cat":"Veg Dish","name":"पनीर टिक्का / Paneer Tikka","price":"₹230","desc":"Paneer Tikka","tags":["Vegetarian"],"img":"img/paneer_tikka.jpeg"},
+      {"id":98,"cat":"Veg Dish","name":"मेथी मसाला / Methi Masala","price":"₹130","desc":"Methi Masala","tags":["Vegetarian"],"img":"img/methi_masala.jpeg"},
+      {"id":99,"cat":"Veg Dish","name":"लसूण मेथी / Lasun Methi","price":"₹100","desc":"Lasun Methi","tags":["Vegetarian"],"img":"img/lasun_methi.jpeg"},
+      {"id":100,"cat":"Veg Dish","name":"शेवभाजी / Shevbhaji","price":"₹100","desc":"Shevbhaji","tags":["Vegetarian"],"img":"img/shevbhaji.jpeg"},
+      {"id":101,"cat":"Veg Dish","name":"काजू करी / Kaju Curry","price":"₹180","desc":"Kaju Curry","tags":["Vegetarian"],"img":"img/kaju_curry.jpeg"},
+      {"id":102,"cat":"Veg Dish","name":"सोयाबीन मसाला / Soyabean Masala","price":"₹110","desc":"Soyabean Masala","tags":["Vegetarian"],"img":"img/soyabean_masala.jpeg"},
+      {"id":103,"cat":"Veg Dish","name":"चना मसाला / Chana Masala","price":"₹110","desc":"Chana Masala","tags":["Vegetarian"],"img":"img/chana_masala.jpeg"},
+      {"id":104,"cat":"Veg Dish","name":"मटकी मसाला / Matki Masala","price":"₹100","desc":"Matki Masala","tags":["Vegetarian"],"img":"img/matki_masala.jpeg"},
+      {"id":105,"cat":"Veg Dish","name":"मिक्स व्हेज / Mix Veg","price":"₹160","desc":"Mix Veg","tags":["Vegetarian"],"img":"img/mix_veg.jpeg"},
+      {"id":106,"cat":"Veg Dish","name":"पालक पनीर / Palak Paneer","price":"₹190","desc":"Palak Paneer","tags":["Vegetarian"],"img":"img/palak_paneer.jpeg"},
+      {"id":107,"cat":"Veg Dish","name":"प्लेन पालक / Plain Palak","price":"₹130","desc":"Plain Palak","tags":["Vegetarian"],"img":"img/plain_palak.jpeg"},
+      {"id":108,"cat":"Veg Dish","name":"व्हेज मंचुरियन / Veg Manchurian","price":"₹180","desc":"Veg Manchurian","tags":["Vegetarian"],"img":"img/veg_manchurian.jpeg"},
+      {"id":109,"cat":"Veg Dish","name":"आलू मीटर / Aloo Mutter","price":"₹150","desc":"Aloo Mutter","tags":["Vegetarian"],"img":"img/aloo_mutter.jpeg"},
+      {"id":110,"cat":"Veg Dish","name":"मशरूम मसाला / Mushroom Masala","price":"₹200","desc":"Mushroom Masala","tags":["Vegetarian"],"img":"img/mushroom_masala.jpeg"},
     ];
 
     // Cart functionality (same as before)
